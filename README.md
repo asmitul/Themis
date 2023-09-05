@@ -1,2 +1,2 @@
 # Themis
-Remix + Ant Design + FastAPI
+Next.js + Ant Design + FastAPI
