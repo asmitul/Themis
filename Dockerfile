@@ -5,7 +5,7 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install
+RUN npm install --only=production && npm cache clean --force
 
 COPY . .
 
@@ -18,6 +18,10 @@ WORKDIR /app
 
 COPY --from=builder /app .
 
+ENV NODE_ENV=production
+
 EXPOSE 3000
+
+USER node
 
 CMD ["npm", "run", "start"]
